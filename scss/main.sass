@@ -1,0 +1,875 @@
+
+@import "bootstrap.min.css"
+@import "reset.css"
+@import "https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+
+@font-face 
+	font-family: 'NunitoSans-Regular'
+	src: url('../fonts/NunitoSans-Regular.ttf')
+
+@font-face 
+	font-family: 'NunitoSans-Bold'
+	src: url('../fonts/NunitoSans-Bold.ttf')
+
+@font-face 
+	font-family: 'NunitoSans-Italic'
+	src: url('../fonts/NunitoSans-Italic.ttf')
+
+@font-face 
+	font-family: 'NunitoSans-Light'
+	src: url('../fonts/NunitoSans-Light.ttf')
+
+@font-face 
+	font-family: 'NunitoSans-ExtraBold'
+	src: url('../fonts/NunitoSans-ExtraBold.ttf')
+					
+
+@mixin translate($transform-x : 0, $transform-y : 0)
+    -moz-transform: translate($transform-x, $transform-y)
+    -o-transform: translate($transform-x, $transform-y)
+    -ms-transform: translate($transform-x, $transform-y)
+    -webkit-transform: translate($transform-x, $transform-y)
+    transform: translate($transform-x, $transform-y)
+
+@mixin transition($value : 0.3s)
+    -webkit-transition: $value
+    -moz-transition: $value
+    -ms-transition: $value
+    -o-transition: $value
+    transition: $value
+
+@mixin radius($border-radius)
+    -webkit-border-radius: $border-radius
+    -moz-border-radius: $border-radius
+    border-radius: $border-radius
+
+@mixin rotate($value, $transition : 0.3s)
+    -webkit-transform: rotate($value)
+    -moz-transform: rotate($value)
+    -ms-transform: rotate($value)
+    -o-transform: rotate($value)
+    transform: rotate($value)
+    @include transition($transition)
+
+@mixin scale($value)
+    -webkit-transform: scale($value)
+    -moz-transform: scale($value)
+    -ms-transform: scale($value)
+    -o-transform: scale($value)
+    transform: scale($value)  
+
+@mixin hidden_tag($value : 0.3s)
+    opacity: 0
+    visibility: hidden
+    @include transition($value)
+
+@mixin visible_tag($value : 0.3s)
+    opacity: 1
+    visibility: visible
+    @include transition($value)
+
+@mixin bg_img
+    background-repeat: no-repeat
+    background-position: 50%
+    background-size: contain
+
+@mixin animation ($name, $duration, $delay, $fill)
+  -webkit-animation: $name $duration $delay $fill
+  -moz-animation:    $name $duration $delay $fill
+  -o-animation:      $name $duration $delay $fill
+  animation:         $name $duration $delay $fill
+
+@mixin box_shadow($shadow)
+	-webkit-box-shadow: $shadow
+	-moz-box-shadow: $shadow
+	box-shadow: $shadow
+
+@mixin scrollbar
+	&::-webkit-scrollbar
+		width: 0.5em
+	&::-webkit-scrollbar-track
+		@include box_shadow(inset 0 0 6px rgba(0,0,0,0.3))
+	&::-webkit-scrollbar-thumb
+		background-color: $text-green
+		outline: 1px solid $text-green
+
+@mixin placeholder($color)
+	&::-webkit-input-placeholder
+	 	color: $color
+	&::-moz-placeholder
+		color: $color
+	&:-ms-input-placeholder
+  		color: $color
+	&:-moz-placeholder
+  		color: $color
+
+$link-color: #469af4
+$site-bg: #f8f9fa
+
+body *
+	font-family: "NunitoSans-Regular"
+	line-height: 1.3
+
+img
+	max-width: 100%	
+
+input
+	width: 100%
+	&:focus
+		outline: none
+
+textarea
+	width: 100%
+	resize: none
+	&:focus
+		outline: none		
+
+.flex
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex 
+
+.font-bold
+	font-family: "NunitoSans-ExtraBold"
+
+.font-light
+	font-family: 'NunitoSans-Light'	
+
+.text-small
+	color: #676c75
+	font-size: 14px
+
+.text-height-2
+	line-height: 2
+
+.site-link
+	color: $link-color
+
+.btn
+	padding: 12px 27px
+	margin-right: 20px
+	font-family: "NunitoSans-Bold" 
+	@include radius(6px)
+	@include box_shadow(0 6px 12px rgba(40, 43, 49, 0.08))
+
+.btn-default
+	background-color: #fff
+	&:hover
+		background-color: #fff * 0.9
+	&:active
+		background-color: #fff * 0.8
+
+
+.btn-orange
+	color: #fff
+	background-color: #ffe641
+	background-image: linear-gradient(135deg, #ff8e64 0%, #ffe641 100%)
+	&:hover
+		background-image: linear-gradient(135deg, #ffe641 0%, #ff8e64 100%)
+
+.btn-sky
+	color: #fff
+	background-color: #3cecb0
+	background-image: linear-gradient(135deg, #009fc5 0%, #3cecb0 100%)
+	&:hover
+		background-image: linear-gradient(135deg, #3cecb0 0%, #009fc5 100%)
+	
+
+//social link
+.fab
+	color: #d3d5d9
+
+a:hover
+	text-decoration: none
+	.fab
+		color: $link-color
+				
+
+
+// block
+.block-settings
+	background-color: $site-bg
+	border: 1px solid #e7e8ea
+
+.block_bg
+	background-image: url('../images/Background_block.png')
+	background-color: initial	
+	background-size: cover
+	background-repeat: no-repeat
+
+.block_bg_top
+	padding-top: 107px
+	background-position: 100% 200%
+
+	
+.block-title
+	margin: 35px 0
+	font-size: 35px
+	padding-right: 60px
+	color: #000
+
+.content-title	
+	margin-bottom: 20px
+	font-size: 35px 
+	color: #000
+
+ 
+
+
+
+//header block
+.header
+	position: absolute
+	padding: 25px 0
+	left: 0
+	right: 0
+	top: 0
+	z-index: 999
+	@include transition(1s)
+
+.header_fixed
+	position: fixed
+	padding: 15px 0
+	background-color: #5b7ef1
+	@include transition(1s)
+
+.logo
+	padding-top: 2px
+	font-size: 20px
+
+.nav	
+	width: 100%
+
+.nav-link
+	color: #fff
+	font-size: 14px
+	&:hover
+		text-decoration: underline
+		color: #000
+
+.nav-link--free
+	color: #000
+	padding: 10px 20px
+	background-color: #fff
+	@include radius(6px)
+
+//menu toggle
+.menu-toggle
+	position: absolute
+	width: 16px
+	height: 12px
+	right: 15px
+	top: 10px
+	cursor: pointer
+
+.menu-toggle--line
+	position: absolute
+	width: 100%
+	height: 2px
+	background-color: #fff
+	@include transition
+
+.menu-toggle--line-1
+	top: 0
+
+.menu-toggle--line-2
+	top: 5px
+
+.menu-toggle--line-3
+	top: 10px
+
+.menu-toggle__active
+	.menu-toggle--line-2
+		@include hidden_tag
+	.menu-toggle--line-1
+		@include rotate(45deg)
+		top: 5px
+	.menu-toggle--line-3
+		@include rotate(-45deg)
+		top: 5px
+
+
+.menu-toggle--items
+	position: absolute
+	top: 30px
+	right: 0
+	width: 120px
+	padding: 10px
+	background-color: #fff
+	border: 1px solid $site-bg
+	z-index: 100
+	@include radius(10px)	
+	@include hidden_tag
+
+.menu-toggle--items__active
+	@include visible_tag	
+
+.menu-link
+	display: block
+	padding: 5px
+
+//app
+.app
+	position: relative
+	margin: 26px 0
+	&:after
+		position: absolute
+		content: ''
+		left: 0
+		right: 0
+		bottom: -60px
+		height: 300px
+		background-color: $site-bg
+		z-index: -1
+
+.app-image
+	text-align: center
+
+.app-content
+	padding-top: 90px	
+
+
+//process
+.process
+	border-top: 0	
+	padding: 35px 0 120px
+
+.process-content
+	margin-top: 30px
+
+.process-item
+	height: 380px
+	text-align: center
+	background-color: #fff
+	padding: 0 50px
+	@include radius(12px)
+	@include box_shadow(0 1px 3px rgba(32, 33, 39, 0.12))
+
+.process-item--icon
+	padding: 0 0 20px
+
+.process-item--title
+	padding: 10px 0
+
+.process-item--title
+	font-size: 20px
+	font-family: "NunitoSans-Bold"
+
+.process-item--text
+	padding: 10px 0	
+
+.process-item--link
+	padding: 10px 0	
+
+
+//brands 
+.brands 
+	padding: 80px 0
+
+//sync
+.sync
+	padding: 120px 0 110px
+
+.sync-item
+	padding: 30px
+	@include radius(12px)
+	@include transition
+	&:hover
+		background-color: #fff
+		@include box_shadow(0 6px 12px rgba(32, 33, 39, 0.08))
+		@include transition
+
+.sync-title
+	img
+		margin-right: 11px	
+		margin-bottom: -5px
+
+.sync-summary
+	padding-left: 40px		
+
+.sync-image
+	text-align: center
+	img
+		max-width: 470px	
+
+.sync-text
+	font-size: 14px		
+
+//	download
+.download
+	padding: 75px 0
+
+ 
+
+// .download-summary
+// 	line-height: 2
+
+.download-btns	
+	align-self: center
+	justify-content: flex-end
+
+.btn-download
+	width: 170px	
+
+//offer
+.offers
+	padding: 120px 0
+
+.offers-shadow	
+	@include box_shadow(1px 1px 10px 1px rgba(0, 0, 0, 0.1))
+
+.offer-item
+	max-height: 590px
+	overflow: hidden
+
+.offer-content
+	background-color: #fff
+
+.offer-img
+	padding-top: 90px
+	text-align: center
+	img
+		max-width: 470px
+
+//video
+.video
+	padding: 75px 0 125px 0
+	background-image: url('../images/Image_bg.png')
+	background-size: cover
+		
+.video-content
+	padding: 40px 0
+	text-align: center
+
+.video-text	
+	padding-bottom: 40px	
+	opacity: 0.8	
+
+.video-btn
+	position: relative
+	width: 70px
+	height: 70px
+	background-color: #fff
+	background-image: url('../images/Play-Filled Icon.png')
+	background-size: 21px
+	background-repeat: no-repeat
+	background-position: 50%
+	z-index: 10
+	cursor: pointer
+	@include radius(50%)	
+
+.firstCircle,
+.secondCircle,
+.thirdCircle
+	position: absolute
+	width: 100%
+	height: 100%
+	background-color: transparent
+	border: 2px solid #fff
+	z-index: 1
+	@include radius(50%)
+
+.firstCircle
+	@include animation(circleVideo, 2s, 0s, infinite)
+
+.secondCircle
+	@include animation(circleVideo, 2s, 0.3s,  infinite)	
+
+.thirdCircle
+	@include animation(circleVideo, 2s, 0.6s,  infinite)			
+
+@keyframes circleVideo 
+	0%
+		@include scale(0.5)
+		opacity: 1
+
+	95%, 100%
+		@include scale(2)
+		opacity: 0
+
+//reviews	
+.reviews
+	background-color: $site-bg 
+
+.reviews-info
+	position: relative
+	padding: 135px 0
+	background-color: #fff
+	&:before
+		position: absolute
+		content: ''
+		background-color: #fff
+		left: -100%
+		top: 0
+		bottom: 0
+		right: 0
+		z-index: 1
+
+.reviews-content,
+.reviews-bottom	
+	position: relative
+	z-index: 10
+
+.reviews-stars
+	margin: 6px 0 52px
+
+.reviews-bottom
+	padding: 180px 0 45px	
+
+.reviews-bottom--title
+	padding-bottom: 40px
+	color: #999ea8
+	font-family: "NunitoSans-Bold"
+	font-size: 15px
+
+.reviews-link
+	position: relative
+	display: block
+	padding: 8px 0 8px 35px	
+	font-family: "NunitoSans-Bold"
+	&:before
+		position: absolute
+		content: ''
+		width: 24px
+		left: 0
+		top: 50%
+		height: 8px
+		background-image: url('../images/Arrow-Icon.png')
+		@include bg_img
+		@include translate(0, -50%)
+
+.reviews-item
+	max-width: 570px
+	background-color: #fff
+	margin: 20px 0
+	padding: 20px 45px 10px
+	@include radius(12px)
+	@include box_shadow(0 6px 12px rgba(32, 33, 39, 0.08))
+
+.reviews-comment
+	padding: 0 0 15px 
+
+.reviews-comment--text
+	font-style: italic
+	font-size: 14px
+
+.review-img
+	padding-top: 10px
+
+.reviews-person
+	border-top: 1px solid #e7e8ea
+	padding: 15px 0
+	width: 100%
+	color: #999ea8
+
+.reviews-person--name
+	font-size: 12px
+
+// plan
+.plan
+	padding: 120px 0
+	background-color: $site-bg
+
+// .plan-text
+// 	padding-left: 0
+
+.plan-text--summary
+	color: #676c75	
+
+.plan-item
+	padding: 50px 0 60px	
+	@include radius(12px)
+
+.btn-plan	
+	width: 100%
+	margin: 24px 0 0 
+
+.plan-item--content
+	padding: 0 50px
+
+.plan-item--type
+	background-color: #f8f9fa
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3)
+	font-size: 11px
+	text-transform: uppercase
+	font-family: "NunitoSans-Bold"
+	padding: 13px 0
+	text-align: center
+	letter-spacing: 2px
+
+.plan-item--type-active	
+	background-color: rgba(248, 249, 250, 0.07)
+
+.plan-item--price
+	padding: 30px 0 15px
+	font-family: "NunitoSans-Light"
+	text-align: center
+
+.plan-item--price-active
+	font-size: 60px	
+
+.plan-item--price-default
+	font-size: 40px	
+
+.plan-item--benefit
+	padding: 5px 0	
+
+.plan-list
+	position: relative
+	padding: 6px 0 5px 30px
+	font-size: 15px
+	&:before
+		position: absolute
+		content: ''
+		width: 16px
+		height: 12px	
+		left: 0
+		top: 50%
+		@include translate(0, -50%)
+
+.tip-white
+	&:before		
+		background-image: url("../images/Success-Icon.png")
+
+.tip-gray
+	&:before		
+		background-image: url("../images/Success-Icon_1.png")
+
+.plan-item--active
+	position: relative
+	max-width: 350px	
+	flex: 0 0 100%	
+	z-index: 100
+
+.plan-item--default
+	position: relative
+	background-color: #fff
+	max-width: 320px	
+	flex: 0 0 100%
+	margin-left: -15px
+	z-index: 10
+	@include box_shadow(0 1px 3px rgba(32, 33, 39, 0.12))
+
+
+//contact
+.contact
+	padding: 120px 0 
+
+.contact-summary
+	opacity: 0.7	
+	text-align: center
+
+.contact-form	
+	margin-top: 60px
+	background-color: #fff
+	padding: 70px
+	@include radius(12px)
+	@include box_shadow(0 12px 24px rgba(40, 43, 49, 0.16))
+
+.form-field
+	padding: 14px 30px
+	margin-bottom: 20px
+	background-color: #f8f9fa
+	border: 1px solid #e7e8ea
+	@include radius(6px)
+
+.form-textarea
+	height: 210px
+
+//footer
+.footer
+	padding: 25px 0 35px
+
+.footer-item
+
+.heart-icon	
+	display: inline-block
+	width: 12px
+	height: 12px
+	background-image: url("../images/Heart-Icon.png")
+	background-repeat: no-repeat
+
+.footer-item
+	text-align: center
+
+.footer-opacity
+	color: #999ea8	
+	opacity: 0.8	
+
+.footer-social
+	text-align: center
+	width: 120px
+	@include radius(6px)
+	border: 1px solid #e7e8ea
+
+.social-icon
+	width: 40px
+	height: 40px
+	&:not(:last-child)
+		border-right: 1px solid #e7e8ea
+
+@media screen and (max-width: 1140px) {
+.plan-content 
+	text-align: center
+	padding-bottom: 30px
+
+.content-title
+	margin: 0 auto 20px	
+	
+.plan-text,
+.plan-items .row
+	justify-content: center	 }
+
+
+@media screen and (max-width: 992px) {
+.block-title
+	padding: 0
+
+.btn
+	margin-right: 15px
+
+.app-content
+	padding-top: 0
+
+.process-item
+	padding: 0 15px
+	
+.sync,
+.process,
+.download,
+.offers,
+.plan,
+.contact,
+.brands,
+.video
+	padding: 40px 0
+
+.btn-download
+	width: 130px
+
+.reviews-item
+	max-width: 470px
+
+.sync-image img
+	max-width: 100% }
+
+@media screen and (max-width: 768px) {
+.menu-toggle--items
+	width: 140px
+
+.nav-link
+	color: #000
+	padding: 10px 5px
+	font-size: 16px
+
+.block-title
+	font-size: 25px
+	margin: 15px 0
+
+.btn
+	margin: 5px 0
+
+.btn-download
+	margin-right: 20px
+	width: 170px
+
+.download-btns
+	justify-content: center
+
+.process-item
+	height: 280px
+
+.brand
+	margin: 5px 0
+
+.offer-content
+	padding: 20px 0
+	margin: 10px 0
+
+.reviews-info
+	text-align: center
+	padding: 35px 0
+	margin: 0 0 20px
+
+.reviews-bottom
+	width: 180px
+	text-align: left
+	margin: 0 auto	
+	padding: 35px 0
+
+.reviews-stars
+	margin: 5px 0 10px		
+
+.footer-item
+	margin: 5px 0
+	justify-content: center
+
+.sync-image,
+.offer-img
+	display: none			}	
+
+@media screen and (max-width: 576px) {
+.logo
+	padding-left: 15px
+
+.app-logo
+	margin: auto	
+
+.app
+	padding: 0 15px
+
+.download,
+.video	
+	padding: 30px 15px
+
+.block-btns
+	text-align: center
+	margin: 10px 0	
+
+.sync,
+.process, 
+.offers,
+.plan,
+.contact,
+.brands
+	padding: 30px 0
+
+.sync-item
+	padding: 30px 15px
+
+.btn-download
+	width: 170px
+
+
+.download-content
+	text-align: center		
+
+.reviews-item
+	padding: 20px 30px 10px
+
+.review-img
+	margin-bottom: 10px
+
+.plan-text
+	padding: 0 30px		
+
+.plan-item--default
+	margin: 0
+
+.contact-form
+	padding: 30px
+
+.contact-summary
+	padding: 0 15px	
+
+.footer-social
+	margin-right: 15px			}
+
+
+@media screen and (max-width: 410px) {
+.btn-download
+	width: 190px
+	margin: 10px auto  }
+

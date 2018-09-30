@@ -1,0 +1,317 @@
+extends pug/base
+
+append vars
+	- html.classList.push("page-index")
+	- meta.charset = "utf-8"
+	- meta.description = "test task"
+	- title = "Khrystev Roman test task"
+	- meta.viewport = "width=device-width, initial-scale=1"
+	
+block content
+	.block_bg.block_bg_top#top
+		header.header
+			.container
+				.row
+					.header-logo.col-3.col-xl-6.align-content-center.flex
+						.row
+							a(href="#top").font-bold.text-white.logo AppStarter
+					.col-5.col-md-8.col-xl-5
+						.row
+							nav
+								ul.nav.justify-content-between.align-content-center.flex
+									+nav_link("Features", "#features")
+									+nav_link("Video Tour", "#video")
+									+nav_link("Reviews", "#reviews")
+									+nav_link("Pricing", "#pricing")
+									li.nav-li
+										a(href="#pricing").font-bold.nav-link.nav-link--free GET IT FREE
+					.menu.col-4.col-md-1
+						.menu-toggle
+							span.menu-toggle--line.menu-toggle--line-1
+							span.menu-toggle--line.menu-toggle--line-2
+							span.menu-toggle--line.menu-toggle--line-3
+						ul.menu-toggle--items
+							+menu_link("point1")
+							+menu_link("point2")
+							+menu_link("point3")
+		.app
+			.container
+				.row
+					.app-content.col-sm
+						.row
+							.app-logo
+								img(alt="site image alt" src="images/App-Icon.png")
+							.block-title.text-white
+								h1
+									span.font-bold AppStarter. 
+									span.font-light Best landing page for web and mobile apps
+							.block-btns
+								.btn.btn-orange Download New		
+								.btn.btn-default Watch Video		
+					.app-image.col-sm
+						img(alt="site image alt" src="images/Tablet.png")
+	main.content
+		.process.block-settings#features
+			.container
+				.row
+					.block-title.text-center.col-12
+						p
+							span.font-bold How 
+							span.font-light does it work
+					.process-content.col-12.col-md-4
+						.process-item.justify-content-center.align-items-center.flex-column.flex
+							.process-item--icon
+								img(alt="site image alt" src="images/Icon_sync.png")
+							.process-item--title
+								p.process-summary
+									span.font-bold Sync 
+									span.font-light across all devices
+							.process-item--text
+								p.text-small This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise.
+							.process-item--link
+								a(href="#").site-link Watch video	
+					.process-content.col-12.col-md-4
+						.process-item.justify-content-center.align-items-center.flex-column.flex
+							.process-item--icon
+								img(alt="site image alt" src="images/Icon_mail.png")
+							.process-item--title
+								p
+									span.font-bold All emails 
+									span.font-light  in one place
+							.process-item--text
+								p.text-small This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise.
+							.process-item--link
+								a(href="#").site-link Watch video	
+					.process-content.col-12.col-md-4
+						.process-item.justify-content-center.align-items-center.flex-column.flex
+							.process-item--icon
+								img(alt="site image alt" src="images/Icon_notif.png")
+							.process-item--title
+								p
+									span.font-bold Notifications  
+									span.font-light about sales
+							.process-item--text
+								p.text-small This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise.
+							.process-item--link
+								a(href="#").site-link Watch video									
+
+		.brands.block-settings
+			.container
+				.row
+					.col-12.col-md-10.m-auto
+						.row
+							+brand("images/wired.png")
+							+brand("images/lifehacker.png")
+							+brand("images/mashable.png")
+							+brand("images/theverge.png")
+							+brand("images/gizmodo.png")
+							+brand("images/macworld.png")
+
+		.sync.block-settings
+			.container
+				.row
+					.sync-content.col-12.col-md-6.flex.align-self-center
+						.row.align-self-center
+							+sync_item("  across all devices", " Sync ", "This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment.", "images/Reload-Icon.png")
+							+sync_item("  in one place", " All emails ", "This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment.", "images/Inbox-Icon.png")
+							+sync_item("  your time", " Track ", "This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment.", "images/Clock-Icon.png")
+					.sync-image.col-6
+						img(alt="site image alt" src="images/tablet_4.png")
+
+		.download.block_bg
+			.container
+				.row
+					.download-content.col-12.col-md-7.text-white
+						.row
+							.content-title.text-white
+								span.font-bold Download 
+								span.font-light to get started
+
+							.download-text.col-12.col-md-11
+								.row
+									p.text-height-2 This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment.
+					.download-btns.col-12.col-md-5.flex
+						.row
+							.btn.btn-orange.btn-download Buy for $24			
+							.btn.btn-default.btn-download Try If Free
+		
+		.offers.block-settings
+			.container
+				.row.offers-shadow
+					.offer-item
+						.row.h-100
+							.offer-img.col-6.block_bg
+								img(alt="site image alt" src="images/Tablet_2.png")
+							.offer-content.col-12.col-md-6.flex
+								.row.justify-content-center.text-center
+									.col-7.flex
+										.row.align-self-center
+											.content-title
+												span.font-bold Perfect 
+												span.font-light  landing page for your app	
+											.offer-text
+												p.text-small.text-height-2 This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment, and found herself walking.
+					.offer-item
+						.row.h-100
+							.offer-content.col-12.col-md-6.flex
+								.row.justify-content-center.text-center
+									.col-8.flex
+										.row.align-self-center
+											.content-title
+												span.font-bold Style guide 
+												span.font-light  and sample pages included 	
+											.offer-text
+												p.text-small.text-height-2 This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment, and found herself walking.	
+							.offer-img.col-6.block_bg
+								img(alt="site image alt" src="images/Tablet_2.png")
+		
+		.video#video
+			.container
+				.row.justify-content-center
+					.col-12.col-md-7.video-content
+						.content-title.text-white
+							span.font-bold Watch
+							span.font-light  video tour
+						.video-text
+							p.text-smallt.text-white.text-height-2 This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her.
+						.video-btn.m-auto
+							.firstCircle
+							.secondCircle
+							.thirdCircle
+
+		.reviews#reviews
+			.container
+				.row
+					.reviews-info.col-12.col-md-4
+						.reviews-content
+							.reviews-stars
+								img(alt="site image alt" src="images/stars.png")
+							.content-title
+								p.font-bold Customers
+								p  about AppStarter
+						.reviews-bottom
+							p.reviews-bottom--title Read more reviews
+							a(href="#").reviews-link App Store			
+							a(href="#").reviews-link Google Play			
+					.reviews-items.col-12.col-md-8.align-self-center
+						.row.justify-content-end
+							.reviews-item.m-auto
+								.row
+									.review-img.col-12.col-sm-2
+										.row
+											img(alt="site image alt" src="images/Image_1.png")
+									.reviews-comment.col-12.col-sm-10
+										p.text-height-2.reviews-comment--text This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment, and found herself.
+									.reviews-person.col-12.justify-content-between.flex
+										p.reviews-person--name
+											span.font-bold Eliza Paul
+											|  Web Designer
+										a(href="#")
+											i.fab.fa-twitter
+
+							.reviews-item.align-self-end
+								.row
+									.reviews-comment.col-12.col-sm-10.text-right
+										p.text-height-2.reviews-comment--text This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment, and found herself.
+									.review-img.col-12.col-sm-2
+										.row.justify-content-end
+											img(alt="site image alt" src="images/Image_2.png")
+									.reviews-person.col-12.justify-content-between.flex
+										a(href="#")
+											i.fab.fa-twitter
+										p.reviews-person--name
+											span.font-bold Juan Richard
+											|  Photographer
+							.reviews-item.m-auto
+								.row
+									.review-img.col-12.col-sm-2
+										.row
+											img(alt="site image alt" src="images/Image_3.png")
+									.reviews-comment.col-12.col-sm-10
+										p.text-height-2.reviews-comment--text This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment, and found herself.
+									.reviews-person.col-12.justify-content-between.flex
+										p.reviews-person--name
+											span.font-bold Marian McGuire
+											|  Enterpreneur
+										a(href="#")
+											i.fab.fa-twitter
+		
+		.plan#pricing
+			.container
+				.row
+					.plan-content.col-12.col-xl-5.align-self-center
+						.row
+							.content-title
+								span.font-bold Choose 
+								span.font-small your plan	
+							.plan-text.col-12.col-sm-10
+								.row
+									p.text-height-2.plan-text--summary This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment, and found herself walking.
+					.plan-items.col-12.col-xl-7
+						.row
+							.plan-item.block_bg.plan-item--active
+								p.plan-item--type.plan-item--type-active.text-white proffesional
+								.plan-item--content
+									p.plan-item--price.plan-item--price-active.text-white 10$
+									ul.plan-item--benefit
+										li.plan-list.tip-white.text-white Hundreds of elements				
+										li.plan-list.tip-white.text-white Style guide			
+										li.plan-list.tip-white.text-white 160 icons included				
+										li.plan-list.tip-white.text-white Sketch files				
+										li.plan-list.tip-white.text-white Commercial licence		
+									.btn.btn-plan.btn-orange Buy Now	
+							.plan-item.plan-item--default.flex.flex-column.align-self-center
+								p.plan-item--type starter
+								.plan-item--content
+									p.plan-item--price.plan-item--price-default FREE
+									ul.plan-item--benefit
+										li.plan-list.tip-gray Hundreds of elements				
+										li.plan-list.tip-gray Style guide			
+										li.plan-list.tip-gray 30 icons included				
+										li.plan-list.tip-gray Personal license	 	
+									.btn.btn-plan.btn-sky Get Free	
+
+		.contact.block_bg
+			.container
+				.row.justify-content-center
+					.contact-top.col-12.col-md-8.col-xl-6.m-auto
+						.row.justify-content-center
+							.content-title.text-white
+								span.font-bold Stay 
+								span.font-small in touch		
+							p.contact-summary.text-height-2.text-white This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment.
+					.contact-form.col-11.col-sm-10.col-xl--8
+						.row
+							form(action="" method="POST")#formFeedback
+								.row
+									.col-12.col-md-6
+										input(type="text" placeholder="Your Name" name="formFeedbackName").form-field
+									.col-12.col-md-6
+										input(type="text" placeholder="Email Address" name="formFeedbackEmail").form-field
+									.col-12
+										textarea( placeholder="Message..." name="formFeedbackText").form-field.form-textarea
+									button.btn.btn-orange.m-auto Send Message
+
+		footer.footer
+			.container
+				.row.justify-content-between
+					.footer-item.col-12.col-md-3.col-lg-4.flex
+						.row
+							a(href="#").font-bold.logo AppStarter
+					.footer-item.col-12.col-md-6.col-lg-4
+						p.text-height-2
+							span.footer-opacity Created with  
+							span.heart-icon
+							span.footer-opacity  by  
+							span.font-bold  Sergey Azovskiy
+						p.footer-opacity  &copy; AppStarter, 2017
+					.footer-item.col-12.col-md-3.col-lg-4
+						.row.justify-content-end
+							.footer-social.justify-content-between.flex
+								a(href="#").social-icon.flex.justify-content-center
+									i.fab.fa-facebook-f.align-self-center
+								a(href="#").social-icon.flex.justify-content-center
+									i.fab.fa-twitter.align-self-center
+								a(href="#").social-icon.flex.justify-content-center
+									i.fab.fa-instagram.align-self-center
+	script(src="js/jquery-3.1.1.min.js")

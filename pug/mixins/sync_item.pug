@@ -1,0 +1,8 @@
+mixin sync_item(title, title_bold, text, icon)
+	.sync-item.col-12.col-lg-10
+		.sync-title
+			img(alt="site image alt" src=icon)
+			span.font-bold=title_bold  
+			span=title
+		.sync-summary
+			p.text-height-2.sync-text=text
